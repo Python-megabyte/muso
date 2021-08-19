@@ -1,0 +1,126 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-pagination
+
+block variables
+	- var activeCategory = 'blog'
+	- var pageName = 'Masonry blog'
+
+block page 
+	// Page Header
+	include ../sections/_header-creative
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Overview
+	section.section.section-lg
+		.container
+			.row.row-40
+				.col-md-4
+					+post-classic-2(
+					{
+						imageName: "masonry-blog-1-370x240",
+						title: "DJ Aaron Wilson Visits LA Club with His Biggest Set",
+						link: "single-post.html",
+						exeption: "Amet volutpat consequat mauris nunc congue nisi vitae. Pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices. Vitae purus faucibus ornare suspendisse sed nisi lacus. "
+					},
+					{
+						date: "2 days ago",
+						author: "Martha Ryan",
+						authorLink: "single-post.html"
+					},
+
+					[{"title": "News", "href": "single-post.html"}]
+					)
+
+
+					+post-classic-2(
+					{
+						imageName: "masonry-blog-4-370x240",
+						title: "Top 10 Indie Rock Groups According to Our Listeners",
+						link: "single-post.html",
+						exeption: "Quis auctor elit sed vulputate mi sit. In aliquam sem fringilla ut morbi tincidunt augue. Sed enim ut sem viverra. In tellus integer feugiat scelerisque varius morbi. Et magnis dis parturient montes nascetur ridiculus mus mauris."
+					},
+					{
+						date: "2 days ago",
+						author: "Martha Ryan",
+						authorLink: "single-post.html"
+					},
+
+					[{"title": "News", "href": "single-post.html"}]
+					)
+
+				.col-md-4
+					+post-classic-2(
+					{
+						imageName: "masonry-blog-2-370x240",
+						title: "2nd Annual OnWave Festival to be Held at Fenimore Park",
+						link: "single-blog-post.html",
+						exeption: "Posuere lorem ipsum dolor sit amet consectetur adipiscing elit duis. Mauris augue neque gravida in fermentum et sollicitudin ac. Sed id semper risus in hendrerit gravida. Mauris augue neque gravida in fermentum. Quis auctor elit sed vulputate mi sit amet mauris."
+					},
+					{
+						date: "2 days ago",
+						author: "Lawrence Kelly",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+
+
+					+post-classic-2(
+					{
+						imageName: "masonry-blog-5-370x240",
+						title: "5 Most Trending DJs That You’ve Probably Never Heard of",
+						link: "single-blog-post.html",
+						exeption: "Purus itae  faucibus ornare suspendisse sed nisi lacus. Quis auctor elit sed vulputate. Nibh cras pulvinar mattis nunc sed blandit libero. Eget sit amet tellus cras adipiscing enim eu."
+					},
+					{
+						date: "2 days ago",
+						author: "Lawrence Kelly",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+
+				.col-md-4
+					+post-classic-2(
+					{
+						imageName: "masonry-blog-3-370x240",
+						title: "Sandra Peterson Will Visit Our Studio Next Week",
+						link: "single-blog-post.html",
+						exeption: "Adipiscing diam donec adipiscing tristique risus nec feugiat. Sed vulputate odio ut enim blandit volutpat maecenas volutpat. Ipsum dolor sit amet consectetur adipiscing elit ut."
+					},
+					{
+						date: "2 days ago",
+						author: "Theresa Simpson",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+					+post-classic-2(
+					{
+						imageName: "masonry-blog-6-370x240",
+						title: "Top 8 Tips for First-Time Visitors of EDM Festivals and Live Shows",
+						link: "single-blog-post.html",
+						exeption: "Eget sit amet tellus cras adipiscing enim. Quisque egestas diam in arcu cursus euismod. Nibh tellus molestie nunc non blandit massa enim nec dui. Facilisi etiam dignissim diam quis enim lobortis. Tellus elementum sagittis vitae et leo duis ut diam quam."
+					},
+					{
+						date: "2 days ago",
+						author: "Theresa Simpson",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+
+			+pagination-bootstrap("", 1, 4)
+
+	// Page Footer
+	include ../sections/_footer-2

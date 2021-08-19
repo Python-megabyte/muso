@@ -1,0 +1,126 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-inline-subscribe-form
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Our team'
+
+block page
+	// Page Header
+	include ../sections/_header-creative
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// 4 Column Layout
+	section.section.section-lg
+		.container.text-center
+			h2 4 Column Layout
+			// Owl Carousel
+			.owl-carousel.text-left(data-items='1', data-sm-items='2', data-lg-items='3', data-xl-items='4', data-dots='true' data-nav='false' data-stage-padding='15', data-loop='false', data-margin='30', data-mouse-drag="false")
+
+				+thumbnail-1({
+					imageName: "team-1-270x270",
+					title: "Samuel Chapman",
+					link: "#",
+					position: "Founder, Radio Station Manager",
+					exeption: "Sed tempus urna et pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque."
+				})
+					.group.group-middle.social-items
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-twitter(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-instagram(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook-messenger(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-linkedin(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-snapchat(href='#')
+
+				+thumbnail-1({
+					imageName: "team-2-270x270",
+					title: "Stephen Rosewell",
+					link: "#",
+					position: "News Director",
+					exeption: "Aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in cursus turpis."
+				})
+					.group.group-middle.social-items
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-twitter(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-instagram(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook-messenger(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-linkedin(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-snapchat(href='#')
+
+				+thumbnail-1({
+					imageName: "team-3-270x270",
+					title: "Catherine White",
+					link: "#",
+					position: "Sound Engineer",
+					exeption: "Interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie."
+				})
+					.group.group-middle.social-items
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-twitter(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-instagram(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook-messenger(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-linkedin(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-snapchat(href='#')
+
+				+thumbnail-1({
+					imageName: "team-4-270x270",
+					title: "Danielle Gray",
+					link: "#",
+					position: "Radio Host",
+					exeption: "Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam."
+				})
+					.group.group-middle.social-items
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-twitter(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-instagram(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook-messenger(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-linkedin(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-snapchat(href='#')
+
+	// 3 Column Layout
+	section.section.section-lg.bg-gray-100
+		.container.text-center
+			h2 3 Column Layout
+			// Owl Carousel
+			.owl-carousel(data-items='1', data-sm-items='2', data-lg-items='3', data-dots='true', data-nav='false', data-stage-padding='15', data-loop='false', data-margin='30', data-mouse-drag="false")
+				+thumbnail-2({
+					imageName: "team-1-149x149",
+					title: "Samuel Chapman",
+					link: "#",
+					position: "Founder, Radio Station Manager"
+				})
+					.group.group-middle.social-items
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-twitter(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-instagram(href='#')
+
+				+thumbnail-2({
+					imageName: "team-2-149x149",
+					title: "Stephen Rosewell",
+					link: "#",
+					position: "News Director"
+				})
+					.group.group-middle.social-items
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-twitter(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-instagram(href='#')
+
+				+thumbnail-2({
+					imageName: "team-3-149x149",
+					title: "Catherine White",
+					link: "#",
+					position: "Sound Engineer"
+				})
+					.group.group-middle.social-items
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-twitter(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-instagram(href='#')
+
+	// Page Footer
+	include ../sections/_footer-2

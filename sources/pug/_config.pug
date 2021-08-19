@@ -1,0 +1,97 @@
+-
+	var
+		html_class = "wide wow-animation",
+		fonts = "//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,700,900",
+		subscribeFormCounter = 0,
+		logo = {
+			default: 'logo_112x21',
+			inverse: 'logo_112x21',
+			inverseBig: 'logo_112x21',
+			white: 'logo_112x21',
+			footer:'footer-logo-168x31',
+			name: 'OnWave'
+		},
+		links = {
+			post: 'blog-post.html',
+			getTemplate:'#get-template'
+		},
+		colors = {
+			primary: '#f23637',
+			secondary: '#fc0b68'
+		},
+		menu = [
+			{
+				title: 'Home',
+				category: 'home', 
+				link: 'index.html'
+			},
+			{
+				title: 'Podcasts',
+				category: 'podcasts',
+				link: 'podcasts.html'
+			},
+			{
+				title: 'Promotions',
+				category: 'promotions',
+				link: 'promotions.html'
+			},
+			{
+				title: 'Blog',
+				category: 'blog',
+				link: "#" ,
+				dropdown: [
+					{ title: 'Classic blog' },
+					{ title: 'Grid blog' },
+					{ title: 'Masonry blog' },
+					{ title: 'Modern blog' },
+					{ title: 'Single blog post' }
+
+				]
+			},
+			{
+				title: 'About',
+				category: 'about',
+				link: 'about.html'
+			},
+			{
+				title: 'Pages',
+				category: 'pages',
+				link: '#',
+				megamenu: [
+					{
+						title: 'Elements',
+						list: [
+							{ title: 'Typography' },
+							{ title: 'Buttons' },
+							{ title: 'Forms' },
+							{ title: 'Tabs and accordions' },
+							{ title: 'Progress bars' },
+							{ title: 'Grid' },
+							{ title: 'Tables' }
+						]
+					},
+					{
+						title: 'Pages',
+						list: [
+							{ title: '404 Page', link: '404.html' },
+							{ title: '503 Page', link: '503.html' },
+							{ title: 'Coming soon' },
+							{ title: 'Login/Registration', link: 'login.html' },
+							{ title: 'Privacy policy' },
+							{ title: 'Search results' },
+							{title: 'Careers'},
+							{title: 'Contacts',category: 'contacts'},
+							{title: 'Our team'},
+							{title: 'Single job'}
+						]
+					},
+					{
+						title: 'Gallery',
+						list: [
+							{ title: 'Grid gallery' },
+							{ title: 'Masonry gallery' }
+						]
+					}
+				]
+			}
+		];

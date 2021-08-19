@@ -1,0 +1,117 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-inline-subscribe-form
+
+block variables
+	- var activeCategory = 'promotions'
+	- var pageName = 'Promotions'
+
+block page
+	// Page Header
+	include ../sections/_header-creative
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// A Wide Range of Banking & Financial Services
+	section.section.section-lg
+		.container.text-center
+			.row.justify-content-center
+				.col-md-12.col-xl-10
+					h2 Promotions by OnWave Radio
+					.heading-6.block-lg Lorem ipsum dolor sit amet, qui tollit laoreet ocurreret id, ne vis melius offendit appetere, ius timeam percipit argumentum id. His mutat nostrum ad, ei qui nostro aeterno recteque, aperiam quaerendum id has et.
+					a.button.button-lg.button-primary(href='single-service.html') Read more
+	// Services
+	section.section.section-lg.bg-gray-100
+		.container
+			.service-list
+				.row.row-20.service-item
+					.col-md-6
+						+png("promotions-1-540x327")
+					.col-md-6
+						h3.title Sing a Song to Win Great Prizes
+						p.exeption Suspendisse faucibus interdum posuere lorem ipsum dolor. Sed libero enim sed faucibus turpis in eu. Sed risus pretium quam vulputate dignissim suspendisse. Est sit amet facilisis magna etiam tempor orci eu. Eget mauris pharetra et ultrices neque ornare.
+						a.button.button-lg.button-primary(href='single-service.html') Learn more
+
+				.row.row-20.service-item
+					.col-md-6
+						+png("promotions-2-540x327")
+					.col-md-6
+						h3.title Win a Ticket to OnWave Festival
+						p.exeption Volutpat est velit egestas dui. Platea dictumst quisque sagittis purus sit amet. Tempor id eu nisl nunc mi ipsum. Vel facilisis volutpat est velit egestas. Leo vel fringilla est ullamcorper eget nulla facilisi etiam dignissim.
+						a.button.button-lg.button-primary(href='single-service.html') Learn more
+
+				.row.row-20.service-item
+					.col-md-6
+						+png("promotions-3-540x327")
+					.col-md-6
+						h3.title Complete Our Jewelry Quiz
+						p.exeption Sit amet massa vitae tortor condimentum lacinia. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Tellus in hac habitasse platea dictumst vestibulum rhoncus. Nulla at volutpat diam ut venenatis tellus.
+						a.button.button-lg.button-primary(href='single-service.html') Learn more
+
+	// Call to action
+	section.section.section-xs.bg-primary-gradient
+		.container
+			.box-cta
+				.box-cta-inner
+					h3 Listen to #[span.font-weight-bold OnWave ] from Anywhere!
+				.box-cta-inner
+					a.button.button-md.button-white.btn-md(href='#') Listen Online
+
+	// Testimonials
+	section.section.section-lg.bg-gray-100
+		.container.text-center
+			h2 Testimonials
+			// Owl Carousel
+			.owl-carousel.text-left(data-items='1', data-md-items='2', data-dots='true' data-nav='false' data-stage-padding='0', data-loop='true', data-margin='30', data-mouse-drag="false", data-autoplay="false")
+				+blockquote-boxed({
+					time: "2 days ago",
+					quote: "I enjoy listening to OnWave at home and work. Their DJs have  very unique track and remix selections in House and Trance - two electronic music genres that I really love.",
+					imageName: "user-1-64x64",
+					authorName: "Marie Hanson",
+					authorPosition: "Regular Listener"
+				})
+
+				+blockquote-boxed({
+					time: "2 days ago",
+					quote: "I usually listen to night shows and podcasts on OnWave as I work during the night shifts. The DJs and hosts of this radio station are very energetic and they often keep me from getting bored.",
+					imageName: "user-2-64x64",
+					authorName: "Mildred Bates",
+					authorPosition: "Regular Listener"
+				})
+
+				+blockquote-boxed({
+					time: "2 days ago",
+					quote: "I enjoy listening to OnWave at home and work. Their DJs have  very unique track and remix selections in House and Trance - two electronic music genres that I really love.",
+					imageName: "user-1-64x64",
+					authorName: "Marie Hanson",
+					authorPosition: "Regular Listener"
+				})
+				+blockquote-boxed({
+					time: "2 days ago",
+					quote: "I usually listen to night shows and podcasts on OnWave as I work during the night shifts. The DJs and hosts of this radio station are very energetic and they often keep me from getting bored.",
+					imageName: "user-2-64x64",
+					authorName: "Mildred Bates",
+					authorPosition: "Regular Listener"
+				})
+
+				+blockquote-boxed({
+					time: "2 days ago",
+					quote: "I enjoy listening to OnWave at home and work. Their DJs have  very unique track and remix selections in House and Trance - two electronic music genres that I really love.",
+					imageName: "user-1-64x64",
+					authorName: "Marie Hanson",
+					authorPosition: "Regular Listener"
+				})
+					+blockquote-boxed({
+						time: "2 days ago",
+						quote: "I usually listen to night shows and podcasts on OnWave as I work during the night shifts. The DJs and hosts of this radio station are very energetic and they often keep me from getting bored.",
+						imageName: "user-2-64x64",
+						authorName: "Mildred Bates",
+						authorPosition: "Regular Listener"
+					})
+
+	// Page Footer
+	include ../sections/_footer-2

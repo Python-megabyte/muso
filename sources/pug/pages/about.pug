@@ -1,0 +1,138 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-inline-subscribe-form
+include ../components/_ui-progress-bar-linear
+
+block variables
+	- var activeCategory = 'about'
+	- var pageName = 'About'
+
+block page 
+	// Page Header
+	include ../sections/_header-creative
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Join Our Team
+	section.section.section-lg.custom-image-section
+		.container.relative-container
+			.row.row-30.row-md-60.justify-content-between
+				.col-md-12
+					h2 Our Mission
+				.col-md-6
+					.heading-6 Velit aliquet sagittis id consectetur. Accumsan sit amet nulla facilisi morbi tempus.
+					p Vel turpis nunc eget lorem dolor sed viverra ipsum nunc. Tellus integer feugiat scelerisque varius morbi enim nunc. Neque egestas congue quisque egestas diam. Donec enim diam vulputate ut pharetra sit amet. Amet aliquam id diam maecenas.
+					a.button.button-lg.button-primary(href='#') Read More About Us
+				.col-md-6.col-lg-5
+					.progress-linear-wrap
+						+progress-bar-linear({
+							title: "Music",
+							valueTo: "75"
+						})
+						+progress-bar-linear({
+							title: "News",
+							valueTo: "50"
+						})
+						+progress-bar-linear({
+							title: "Entertainment",
+							valueTo: "75"
+						})
+						+progress-bar-linear({
+							title: "Shows",
+							valueTo: "75"
+						})
+	// Your Career Starts Here
+	section.section.section-lg.bg-gray-100
+		.container.text-center
+			h2.custom-title: span History
+			// Owl Carousel
+			.owl-carousel.text-left(data-items='1', data-sm-items='2', data-md-items='3', data-lg-items='4', data-dots='false' data-nav='false' data-stage-padding='15', data-loop='true', data-margin='30', data-autoplay="true",data-mouse-drag="true")
+				+timeline({
+					date: 'June 2018',
+					imageName: 'timeline-1-100x72',
+					link: '#',
+					title: 'Partnering with international EDM & Rock music festivals',
+					exeption: 'Lacinia at quis risus sed vulputate odio ut. Sagittis eu volutpat odio facilisis. Lorem ipsum dolor sit amet consectetur. Tincidunt arcu non sodales neque.'
+				})
+
+				+timeline({
+					date: 'April 2015',
+					imageName: 'timeline-2-100x72',
+					link: '#',
+					title: 'Extending the range of broadcasted songs and launching our website',
+					exeption: 'Dictum at tempor commodo ullamcorper a lacus vestibulum. Urna id volutpat lacus laoreet non curabitur. Vitae tempus quam pellentesque nec.'
+				})
+
+				+timeline({
+					date: 'December 2012',
+					imageName: 'timeline-3-100x72',
+					link: '#',
+					title: 'Introducing more electronic music',
+					exeption: 'Lorem ipsum dolor sit amet, scripta legimus quaerendum ex vis, audire nonumes his an. Decore tamquam insolens usu, an duo omnium debitis adipiscing, ne postulant.'
+				})
+
+				+timeline({
+					date: 'October 2010',
+					imageName: 'timeline-4-100x72',
+					link: '#',
+					title: 'First exclusive radioshow broadcast on OnWave',
+					exeption: 'Faucibus turpis in eu mi bibendum neque egestas congue quisque. Id interdum velit laoreet id donec. Duis at tellus at urna condimentum mattis pellentesque.'
+				})
+
+				+timeline({
+					date: 'August 2005',
+					imageName: 'timeline-5-100x72',
+					link: '#',
+					title: 'Improving the national broadcast quality',
+					exeption: 'Dapibus ultrices in iaculis nunc sed augue. Amet cursus sit amet dictum sit. Vel pharetra lorem dolor sed. Diam sollicitudin tempor id eu nisl nunc mi.'
+				})
+
+				+timeline({
+					date: 'April 1999',
+					imageName: 'timeline-6-100x72',
+					link: '#',
+					title: 'Hiring new DJs and launching new shows',
+					exeption: 'Sagittis id consectetur purus ut faucibus pulvinar elementum integer. Diam vel quam elementum pulvinar etiam non quam lacus. Quis varius quam quisque id.	'
+				})
+
+				+timeline({
+					date: 'March 1998',
+					imageName: 'timeline-7-100x72',
+					link: '#',
+					title: 'OnWave foundation and its first broadcast',
+					exeption: 'Non enim praesent elementum facilisis. Ac tortor dignissim convallis aenean et tortor at risus viverra. In fermentum et sollicitudin ac orci phasellus egestas tellus rutrum.'
+				})
+
+	// Testimonials
+	section.section.section-lg
+		.container.text-center
+			h2.custom-title: span Testimonials
+			// Owl Carousel
+			.owl-carousel.owl-carousel-1(data-items='1', data-dots='true' data-nav='true' data-md-stage-padding='0', data-loop='false', data-margin='30', data-mouse-drag="false")
+				+blockquote-large({
+					authorImage: "index-1-3-220x220",
+					authorName: "Marie Hanson",
+					authorPosition: "Regular Listener",
+					quote: "Tortor vitae purus fau2cibus ornare suspendisse sed. Integer quis auctor elit sed. Etiam dignissim diam quis enim."
+				})
+
+				+blockquote-large({
+					authorImage: "index-1-4-220x220",
+					authorName: "Grace Jones",
+					authorPosition: "Regular Listener",
+					quote: "Habitant morbi tristique senectus et netus et malesuada. Libero enim sed faucibus turpis in. Volutpat ac tincidunt vitae semper quis."
+				})
+
+				+blockquote-large({
+					authorImage: "index-1-5-220x220",
+					authorName: "Ann Smith",
+					authorPosition: "Regular Listener",
+					quote: "Tortor vitae purus faucibus ornare suspendisse sed. Integer quis auctor elit sed. Etiam dignissim diam quis enim."
+				})
+
+	// Page Footer
+	include ../sections/_footer-2

@@ -1,0 +1,128 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-pagination
+
+block variables
+	- var activeCategory = 'blog'
+	- var pageName = 'Grid blog'
+
+block page 
+	// Page Header
+	include ../sections/_header-creative
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Overview
+	section.section.section-lg.bg-gray-100
+		.container
+			.row.row-40.justify-content-sm-center
+				.col-md-6.col-lg-4
+					+post-boxed(
+					{
+						imageName: "grid-blog-1-370x272",
+						title: "DJ Aaron Wilson Visits LA Club with His Biggest Set",
+						link: "single-blog-post.html",
+						exeption: "Lorem ipsum dolor sit amet, scripta legimus quaerendum ex vis, audire nonumes his an. Decore tamquam insolens usu, an duo ."
+					},
+					{
+						date: "2 days ago",
+						author: "Martha Ryan",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+
+				.col-md-6.col-lg-4
+					+post-boxed(
+					{
+						imageName: "grid-blog-2-370x272",
+						title: "2nd Annual OnWave Festival to be Held at Fenimore Park",
+						link: "single-blog-post.html",
+						exeption: "Est ante in nibh mauris cursus mattis molestie a iaculis. Quis auctor elit sed vulputate mi sit. In aliquam sem fringilla ut ."
+					},
+					{
+						date: "2 days ago",
+						author: "Martha Ryan",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+
+				.col-md-6.col-lg-4
+					+post-boxed(
+					{
+						imageName: "grid-blog-3-370x272",
+						title: "Sandra Peterson Will Visit Our Studio Next Week",
+						link: "single-blog-post.html",
+						exeption: "Sed enim ut sem viverra. In tellus integer feugiat scelerisque varius morbi. Et magnis nascetur ridiculus mus mauris ."
+					},
+					{
+						date: "2 days ago",
+						author: "Martha Ryan",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+
+				.col-md-6.col-lg-4
+					+post-boxed(
+					{
+						imageName: "grid-blog-4-370x272",
+						title: "Top 10 Indie Rock Groups According to Our Listeners",
+						link: "single-blog-post.html",
+						exeption: "Tellus morbi nascetur ut sem viverra. Feugiat sed integer in scelerisque varius enim. Et magnis ridiculus mus mauris."
+					},
+					{
+						date: "2 days ago",
+						author: "Martha Ryan",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+
+				.col-md-6.col-lg-4
+					+post-boxed(
+					{
+						imageName: "grid-blog-5-370x272",
+						title: "5 Trending DJs That You’ve Probably Never Heard of",
+						link: "single-blog-post.html",
+						exeption: "Amet volutpat consequat mauris nunc congue nisi vitae. Pretium aenean placerat vestibulum lectus suspendisse sed nisi. "
+					},
+					{
+						date: "2 days ago",
+						author: "Martha Ryan",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+
+				.col-md-6.col-lg-4
+					+post-boxed(
+					{
+						imageName: "grid-blog-6-370x272",
+						title: "Top 8 Tips for First-Time Visitors of EDM Festivals ",
+						link: "single-blog-post.html",
+						exeption: "In eu mi bibendum neque egestas. Nunc eget lorem dolor sed. Ultrices mi tempus imperdiet nulla aliquet nibh praesent . "
+					},
+					{
+						date: "2 days ago",
+						author: "Martha Ryan",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+
+			+pagination-bootstrap("", 1, 4)
+
+	// Page Footer
+	include ../sections/_footer-2

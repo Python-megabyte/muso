@@ -1,0 +1,101 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-inline-subscribe-form
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Careers'
+
+block page 
+	// Page Header
+	include ../sections/_header-creative
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Join Our Team
+	section.section.section-lg.section-bg-custom(style="background-image: url(images/bg-image-1.jpg);")
+		.container.text-center
+			.row.justify-content-center
+				.col-md-12.col-xl-10
+					h2 Join Our Team
+					.heading-6 Id consectetur purus ut faucibus pulvinar elementum integer. Blandit massa enim nec dui nunc mattis enim. Et ultrices neque ornare aenean euismod elementum nisi quis.
+					a.button.button-lg.button-primary(href='contacts.html') Send Your CV
+
+	// Your Career Starts Here
+	section.section.section-md.bg-gray-100
+		.container.text-center
+			h2.custom-title: span Your Career Starts Here
+			.row
+				// Isotope Filters
+				.col-lg-12
+					.isotope-filters.isotope-filters-horizontal.isotope-filters-line.isotope-inline-filters
+						button.isotope-filters-toggle.button.button-sm.button-primary(data-custom-toggle='#isotope-filters', data-custom-toggle-disable-on-blur="true") Filter
+							span.caret
+						ul.isotope-filters-list#isotope-filters
+							li
+								a.active(data-isotope-filter='*', data-isotope-group='gallery', href='#') All Cities
+							li
+								a(data-isotope-filter='Category 1', data-isotope-group='gallery', href='#') San Diego
+							li
+								a(data-isotope-filter='Category 2', data-isotope-group='gallery', href='#') New York
+							li
+								a(data-isotope-filter='Category 3', data-isotope-group='gallery', href='#') Chicago
+
+				// Isotope Content
+				.col-lg-12.text-left
+					.isotope(data-isotope-layout='fitRows', data-isotope-group='gallery')
+						.row
+							.col-sm-6.col-md-4.isotope-item(data-filter='*')
+								+box-minimal({
+									hot: true,
+									title: "Program Director",
+									link: "single-job.html"
+								})
+							.col-sm-6.col-md-4.isotope-item(data-filter='Category 3')
+								+box-minimal({
+									hot: true,
+									title: "Media Sales Professional",
+									link: "single-job.html"
+								})
+							.col-sm-6.col-md-4.isotope-item(data-filter='Category 3')
+								+box-minimal({
+									title: "Assistant Press Officer",
+									link: "single-job.html"
+								})
+							.col-sm-6.col-md-4.isotope-item(data-filter='Category 3')
+								+box-minimal({
+									title: "Sound Engineer",
+									link: "single-job.html"
+								})
+							.col-sm-6.col-md-4.isotope-item(data-filter='Category 2')
+								+box-minimal({
+									title: "Office Manager",
+									link: "single-job.html"
+								})
+							.col-sm-6.col-md-4.isotope-item(data-filter='Category 2')
+								+box-minimal({
+									title: "PR Manager",
+									link: "single-job.html"
+								})
+							.col-sm-6.col-md-4.isotope-item(data-filter='Category 1')
+								+box-minimal({
+									title: "Radio Host",
+									link: "single-job.html"
+								})
+							.col-sm-6.col-md-4.isotope-item(data-filter='Category 1')
+								+box-minimal({
+									title: "Accountant",
+									link: "single-job.html"
+								})
+							.col-sm-6.col-md-4.isotope-item(data-filter='Category 1')
+								+box-minimal({
+									title: "Marketing Manager",
+									link: "single-job.html"
+								})
+
+	// Page Footer
+	include ../sections/_footer-2

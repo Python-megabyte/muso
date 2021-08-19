@@ -1,0 +1,645 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-progress-bar-linear
+include ../components/_ui-inline-subscribe-form
+
+block variables
+	- var activeCategory = 'home'
+	- var pageName = 'Home'
+
+block page
+	// Page Header
+	include ../sections/_header-creative
+
+	// Swiper
+	section.section.swiper-container.swiper-slider.swiper-slider-2(data-loop='false' data-autoplay='false' data-simulate-touch="false" data-slide-effect="fade")
+		.swiper-wrapper
+			.swiper-slide.context-dark(data-slide-bg='images/bg-1-1920x1000.jpg')
+				.swiper-slide-caption
+					.container
+						.row.justify-content-lg-left
+							.col-md-12.col-xl-10
+								h1(data-caption-animate='fadeInUp' data-caption-delay='100') Offering the Best Music to Listeners Worldwide
+								a.button.button-lg.button-primary(href='about.html' data-caption-animate='fadeInUp' data-caption-delay='450') Learn More
+		.swiper-meta
+			ul.links
+				li: a.icon.icon-meta.mdi.mdi-facebook(href="#")
+				li: a.icon.icon-meta.mdi.mdi-twitter(href="#")
+				li: a.icon.icon-meta.mdi.mdi-instagram(href="#")
+				li: a.icon.icon-meta.mdi.mdi-facebook-messenger(href="#")
+				li: a.icon.icon-meta.mdi.mdi-linkedin(href="#")
+				li: a.icon.icon-meta.mdi.mdi-snapchat(href="#")
+
+	//Player
+	section.section.section-xs.bg-primary-gradient.wave-pattern
+		.container
+			.shell
+				.range.range-xs-center
+					.col-lg-12
+						.jp-player-init
+							.jp-jplayer
+							.jp-audio.jp-audio-7(role='application', aria-label='media player')
+								ul.jp-player-list
+									li.jp-player-list-item(data-jp-title="Cro Magnon Man",
+									data-jp-artist="The Stark Palace",
+									data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3")
+								.jp-interface
+									.jp-button.jp-playpaus-button
+										button.jp-btn.jp-play(role='button', tabindex='7') play
+									.jp-time-rail
+										.jp-progress
+											.jp-seek-bar
+												.jp-play-bar
+									.jp-button.jp-volume-button
+										button.jp-btn.jp-mute(role='button', tabindex='7') max volume
+									.jp-volume-bar
+										.jp-volume-bar-value
+								.jp-playlist
+									.playlist-in
+										ul
+											li  
+										.jp-current-time
+										.jp-no-solution
+											span Update Required
+											|            To play the media you will need to either update your browser to a recent version or update your
+											a(href='http://get.adobe.com/flashplayer/', target='_blank')=' Flash plugin'
+											| .
+
+
+
+
+	// Variety of Music Genres
+	section.section.section-lg
+		.container
+			.block-lg.text-center
+				h2 A Variety of Music Genres
+				p We offer our listeners a wide variety of music genres, from House and Dubstep to Rock and Jazz. Explore music and that we have to offer you below.
+			.row.row-30.justify-content-center
+				.col-sm-12.col-md-6.col-lg-4.col-xl-3.wow.fadeInLeft
+					+variety-box(
+						{
+							link:"#",
+							imageName: "music-style-1-49x49",
+							title: "House",
+							description: "We pick the best House music for our listeners."
+						}
+					)
+				.col-sm-12.col-md-6.col-lg-4.col-xl-3.wow.fadeInLeft
+					+variety-box(
+					{
+						link: "#",
+						imageName: "music-style-2-47x56",
+						title: "Drum & Bass",
+						description: "Enjoy top-notch Liquid D&B and Neurofunk music on our radio."
+					}
+					)
+				.col-sm-12.col-md-6.col-lg-4.col-xl-3.wow.fadeInLeft
+					+variety-box(
+					{
+						link: "#",
+						imageName: "music-style-3-37x46",
+						title: "Dubstep",
+						description: "Dozens of new Dubstep tracks are aired regularly on OnWave."
+					}
+					)
+				.col-sm-12.col-md-6.col-lg-4.col-xl-3.wow.fadeInLeft
+					+variety-box(
+					{
+						link: "#",
+						imageName: "music-style-4-53x45",
+						title: "Trance",
+						description: "Our DJs broadcast various Trance tracks on OnWave."
+					}
+					)
+
+				.col-sm-12.col-md-6.col-lg-4.col-xl-3.wow.fadeInLeft
+					+variety-box(
+					{
+						link: "#",
+						imageName: "music-style-5-51x48",
+						title: "Breaks",
+						description: "Listen to the top-notch Breaks selection on OnWave."
+					}
+					)
+				.col-sm-12.col-md-6.col-lg-4.col-xl-3.wow.fadeInLeft
+					+variety-box(
+					{
+						link: "#",
+						imageName: "music-style-6-31x50",
+						title: "Techno",
+						description: "Discover all subgenres of legendary Techno on our radio."
+					}
+					)
+				.col-sm-12.col-md-6.col-lg-4.col-xl-3.wow.fadeInLeft
+					+variety-box(
+					{
+						link: "#",
+						imageName: "music-style-7-25x63",
+						title: "Rock",
+						description: "Weekly concerts and rock exclusives - only on OnWave.."
+					}
+					)
+				.col-sm-12.col-md-6.col-lg-4.col-xl-3.wow.fadeInLeft
+					+variety-box(
+					{
+						link: "#",
+						imageName: "music-style-8-39x54",
+						title: "Jazz",
+						description: "We pick the best Jazz music for our listeners."
+					}
+					)
+
+
+	//	Schedule of Radio Shows
+	section.section.section-lg.bg-gray-100
+		.container.text-center
+			h2 Schedule of Radio Shows
+			p Our radio has more than 20 radio shows aired weekly. They include exclusive guest mixes,live
+				br.d-none.d-lg-block
+				|performances, interviews, and appearances by world-famous DJs and musicians
+			.row.row-30.row-offset-4.text-left
+				.col-md-6.col-lg-4.wow.fadeInRight
+					+post-boxed(
+					{
+						imageName: "latest-blog-post-1-370x272",
+						title: "OnWave Morning Time with Leona Burns",
+						link: "single-blog-post.html",
+						exeption: "Leona Burns is ready to charge up your morning with great EDM & Rock music! Tune in to OnWave to get your dose of morning fun with trending hits and the latest news."
+					},
+					{
+						date: "07:00am – 10:00am",
+						author: "Leona Burns",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "Program", "href": "single-blog-post.html"}]
+					)
+
+				.col-md-6.col-lg-4.wow.fadeInRight(data-wow-delay="0.1s")
+					+post-boxed(
+					{
+						imageName: "latest-blog-post-2-370x272",
+						title: "Up in the Air with Martha Ryan (Special Guest: Ray Johnson)",
+						link: "single-blog-post.html",
+						exeption: "On Saturday, Ray Johnson, a renowned DJ and musician will visit Martha Ryan’s show “Up in the Air” to answer some tricky questions about his career and personal life."
+					},
+					{
+						date: "10:00am – 12:00am",
+						author: "Martha Ryan",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "Interview", "href": "single-blog-post.html"}]
+					)
+
+				.col-md-6.col-lg-4.wow.fadeInRight(data-wow-delay="0.2s")
+					+post-boxed(
+					{
+						imageName: "latest-blog-post-3-370x272",
+						title: "Pixie Lott and The Rollers (Live at Rush Club, May 2018)",
+						link: "single-blog-post.html",
+						exeption: "This weekend’s live concert features an incredible performance by Pixie Lott and her group The Rollers at Rush Club in Seattle, WA, which took place on May 28, 2018."
+					},
+					{
+						date: "12:00am – 03:00pm",
+						author: "Martha Ryan",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "Live", "href": "single-blog-post.html"}]
+					)
+
+			.button-wrap-lg
+				a.button.button-lg.button-primary(href="modern-blog.html") View All Schedule
+
+
+	//New Podcast
+	section.section.section-lg.podcast.context-dark.bg-img-1
+		.container
+			.row.row-60.justify-content-center
+				h2.text-center New Podcasts
+			.row.row-60.justify-content-center.align-items-center
+				.col-sm-12.col-lg-6
+					.row.row-60.justify-content-center.align-items-center.no-gutters-row
+						.col-12.col-md-8.col-lg-12.wow.fadeIn
+							.podcast-wrap
+								.podcast-preview
+									+jpg("track-1-120x120")
+								.shell
+									.range.range-xs-center
+										.jp-player-init
+											.jp-jplayer
+											.jp-audio.jp-audio-1(role='application', aria-label='media player')
+												ul.jp-player-list
+													li.jp-player-list-item(data-jp-title="Denzel Peterson’s Show - Episode 021",
+													data-jp-artist="(feat. MGKR & Lake Z)",
+													data-jp-mp3="audio/sound_1.mp3")
+												.jp-interface
+													.jp-button.jp-playpaus-button
+														button.jp-btn.jp-play(role='button', tabindex='0') play
+													.jp-time-rail
+														.jp-progress
+															.jp-seek-bar
+																.jp-play-bar
+													.jp-button.jp-volume-button
+														button.jp-btn.jp-mute(role='button', tabindex='0') max volume
+													.jp-volume-bar
+														.jp-volume-bar-value
+												.jp-playlist
+													.playlist-in
+														.playlist-counter 01
+														ul
+															li  
+														.jp-no-solution
+															span Update Required
+															|            To play the media you will need to either update your browser to a recent version or update your
+															a(href='http://get.adobe.com/flashplayer/', target='_blank')=' Flash plugin'
+															| .
+						.col-12.col-md-8.col-lg-12.wow.fadeIn
+							.podcast-wrap
+								.podcast-preview
+									+jpg("track-2-120x120")
+								.shell
+									.range.range-xs-center
+										.jp-player-init
+											.jp-jplayer
+											.jp-audio.jp-audio-2(role='application', aria-label='media player')
+												ul.jp-player-list
+													li.jp-player-list-item(data-jp-title="Kate Williams Invites - DJ Hawk and Ollie",
+													data-jp-artist="McMillan’s Orchestra",
+													data-jp-mp3="audio/sound_2.mp3")
+												.jp-interface
+													.jp-button.jp-playpaus-button
+														button.jp-btn.jp-play(role='button', tabindex='2') play
+													.jp-time-rail
+														.jp-progress
+															.jp-seek-bar
+																.jp-play-bar
+													.jp-button.jp-volume-button
+														button.jp-btn.jp-mute(role='button', tabindex='2') max volume
+													.jp-volume-bar
+														.jp-volume-bar-value
+												.jp-playlist
+													.playlist-in
+														.playlist-counter 02
+														ul
+															li  
+														.jp-no-solution
+															span Update Required
+															|            To play the media you will need to either update your browser to a recent version or update your
+															a(href='http://get.adobe.com/flashplayer/', target='_blank')=' Flash plugin'
+															| .
+						.col-12.col-md-8.col-lg-12.wow.fadeIn
+							.podcast-wrap
+								.podcast-preview
+									+jpg("track-3-120x120")
+								.shell
+									.range.range-xs-center
+										.jp-player-init
+											.jp-jplayer
+											.jp-audio.jp-audio-3(role='application', aria-label='media player')
+												ul.jp-player-list
+													li.jp-player-list-item(data-jp-title="DJ Humble & DJ Roxx - Time 2 Roll Show",
+													data-jp-artist="(Live@OnWave / July 26, 2018)",
+													data-jp-mp3="audio/sound_3.mp3")
+												.jp-interface
+													.jp-button.jp-playpaus-button
+														button.jp-btn.jp-play(role='button', tabindex='3') play
+													.jp-time-rail
+														.jp-progress
+															.jp-seek-bar
+																.jp-play-bar
+													.jp-button.jp-volume-button
+														button.jp-btn.jp-mute(role='button', tabindex='3') max volume
+													.jp-volume-bar
+														.jp-volume-bar-value
+												.jp-playlist
+													.playlist-in
+														.playlist-counter 03
+														ul
+															li  
+														.jp-no-solution
+															span Update Required
+															|            To play the media you will need to either update your browser to a recent version or update your
+															a(href='http://get.adobe.com/flashplayer/', target='_blank')=' Flash plugin'
+															| .
+				.col-sm-12.col-lg-6
+					.row.row-60.justify-content-center.align-items-center.no-gutters-row
+						.col-12.col-md-8.col-lg-12.wow.fadeIn
+							.podcast-wrap
+								.podcast-preview
+									+jpg("track-4-120x120")
+								.shell
+									.range.range-xs-center
+										.jp-player-init
+											.jp-jplayer
+											.jp-audio.jp-audio-4(role='application', aria-label='media player')
+												ul.jp-player-list
+													li.jp-player-list-item(data-jp-title="Max N3m0 - The Sound of Neuro (Episode ",
+													data-jp-artist="235 w/ Rodney Stratton)",
+													data-jp-mp3="audio/sound_4.mp3")
+												.jp-interface
+													.jp-button.jp-playpaus-button
+														button.jp-btn.jp-play(role='button', tabindex='4') play
+													.jp-time-rail
+														.jp-progress
+															.jp-seek-bar
+																.jp-play-bar
+													.jp-button.jp-volume-button
+														button.jp-btn.jp-mute(role='button', tabindex='4') max volume
+													.jp-volume-bar
+														.jp-volume-bar-value
+												.jp-playlist
+													.playlist-in
+														.playlist-counter 04
+														ul
+															li  
+														.jp-no-solution
+															span Update Required
+															|            To play the media you will need to either update your browser to a recent version or update your
+															a(href='http://get.adobe.com/flashplayer/', target='_blank')=' Flash plugin'
+															| .
+
+						.col-12.col-md-8.col-lg-12.wow.fadeIn
+							.podcast-wrap
+								.podcast-preview
+									+jpg("track-5-120x120")
+								.shell
+									.range.range-xs-center
+										.jp-player-init
+											.jp-jplayer
+											.jp-audio.jp-audio-5(role='application', aria-label='media player')
+												ul.jp-player-list
+													li.jp-player-list-item(data-jp-title="OnWave MegaLive - Amanda Smith & ",
+													data-jp-artist="Courtney Johnson",
+													data-jp-mp3="audio/sound_5.mp3")
+												.jp-interface
+													.jp-button.jp-playpaus-button
+														button.jp-btn.jp-play(role='button', tabindex='5') play
+													.jp-time-rail
+														.jp-progress
+															.jp-seek-bar
+																.jp-play-bar
+													.jp-button.jp-volume-button
+														button.jp-btn.jp-mute(role='button', tabindex='5') max volume
+													.jp-volume-bar
+														.jp-volume-bar-value
+												.jp-playlist
+													.playlist-in
+														.playlist-counter 05
+														ul
+															li  
+														.jp-no-solution
+															span Update Required
+															|            To play the media you will need to either update your browser to a recent version or update your
+															a(href='http://get.adobe.com/flashplayer/', target='_blank')=' Flash plugin'
+															| .
+						.col-12.col-md-8.col-lg-12.wow.fadeIn
+							.podcast-wrap
+								.podcast-preview
+									+jpg("track-6-120x120")
+								.shell
+									.range.range-xs-center
+										.jp-player-init
+											.jp-jplayer
+											.jp-audio.jp-audio-6(role='application', aria-label='media player')
+												ul.jp-player-list
+													li.jp-player-list-item(data-jp-title="Who’s Next? - Episode 199 feat. Andy and ",
+													data-jp-artist="The Trickers",
+													data-jp-mp3="audio/sound_6.mp3")
+												.jp-interface
+													.jp-button.jp-playpaus-button
+														button.jp-btn.jp-play(role='button', tabindex='6') play
+													.jp-time-rail
+														.jp-progress
+															.jp-seek-bar
+																.jp-play-bar
+													.jp-button.jp-volume-button
+														button.jp-btn.jp-mute(role='button', tabindex='6') max volume
+													.jp-volume-bar
+														.jp-volume-bar-value
+												.jp-playlist
+													.playlist-in
+														.playlist-counter 06
+														ul
+															li  
+														.jp-no-solution
+															span Update Required
+															|            To play the media you will need to either update your browser to a recent version or update your
+															a(href='http://get.adobe.com/flashplayer/', target='_blank')=' Flash plugin'
+															| .
+
+
+
+
+
+
+
+
+	// Testimonials
+	section.section.section-lg.bg-gray-100
+		.container.text-center
+			h2 Testimonials
+			// Owl Carousel
+			.owl-carousel.text-left(data-items='1', data-md-items='2', data-dots='true' data-nav='false' data-stage-padding='0', data-loop='true', data-margin='30', data-mouse-drag="false", data-autoplay="false")
+				+blockquote-boxed({
+					time: "2 days ago",
+					quote: "I enjoy listening to OnWave at home and work. Their DJs have  very unique track and remix selections in House and Trance - two electronic music genres that I really love.",
+					imageName: "user-1-64x64",
+					authorName: "Marie Hanson",
+					authorPosition: "Regular Listener"
+				})
+
+				+blockquote-boxed({
+					time: "2 days ago",
+					quote: "I usually listen to night shows and podcasts on OnWave as I work during the night shifts. The DJs and hosts of this radio station are very energetic and they often keep me from getting bored.",
+					imageName: "user-2-64x64",
+					authorName: "Mildred Bates",
+					authorPosition: "Regular Listener"
+				})
+
+				+blockquote-boxed({
+					time: "2 days ago",
+					quote: "I enjoy listening to OnWave at home and work. Their DJs have  very unique track and remix selections in House and Trance - two electronic music genres that I really love.",
+					imageName: "user-1-64x64",
+					authorName: "Marie Hanson",
+					authorPosition: "Regular Listener"
+				})
+				+blockquote-boxed({
+					time: "2 days ago",
+					quote: "I usually listen to night shows and podcasts on OnWave as I work during the night shifts. The DJs and hosts of this radio station are very energetic and they often keep me from getting bored.",
+					imageName: "user-2-64x64",
+					authorName: "Mildred Bates",
+					authorPosition: "Regular Listener"
+				})
+
+				+blockquote-boxed({
+					time: "2 days ago",
+					quote: "I enjoy listening to OnWave at home and work. Their DJs have  very unique track and remix selections in House and Trance - two electronic music genres that I really love.",
+					imageName: "user-1-64x64",
+					authorName: "Marie Hanson",
+					authorPosition: "Regular Listener"
+				})
+					+blockquote-boxed({
+						time: "2 days ago",
+						quote: "I usually listen to night shows and podcasts on OnWave as I work during the night shifts. The DJs and hosts of this radio station are very energetic and they often keep me from getting bored.",
+						imageName: "user-2-64x64",
+						authorName: "Mildred Bates",
+						authorPosition: "Regular Listener"
+					})
+
+	// Why You Should Listen to OnWave
+	section.section.section-lg
+		.container.text-center
+			h2 Why You Should Listen to OnWave
+			.row.row-40.justify-content-center.number-counter
+				.col-sm-6.col-lg-3.wow.fadeInLeft
+					+blurb-icon-filled({
+						icon: "linearicons-star",
+						title: "Best Music Selection",
+						exeption: "OnWave offers its listeners the best music in various styles, from electronic to rock music."
+					})
+
+				.col-sm-6.col-lg-3.wow.fadeInLeft(data-wow-delay="0.1s")
+					+blurb-icon-filled({
+						icon: "linearicons-news",
+						title: "Latest News",
+						exeption: "Our hosts are always ready to share with you the latest regional and global news and updates."
+					})
+
+				.col-sm-6.col-lg-3.wow.fadeInLeft(data-wow-delay="0.2s")
+					+blurb-icon-filled({
+						icon: "linearicons-sun",
+						title: "Available Everywhere",
+						exeption: "You can listen to our radio both online and offline via any devices, gadgets or radios."
+					})
+
+				.col-sm-6.col-lg-3.wow.fadeInLeft(data-wow-delay="0.3s")
+					+blurb-icon-filled({
+						icon: "linearicons-medal-empty",
+						title: "Best DJ Shows",
+						exeption: "OnWave regularly broadcasts shows from the best DJs in the world that play exclusive tracks for you."
+					})
+
+	// Call to action
+	section.section.section-xs.bg-primary-gradient
+		.container
+			.box-cta
+				.box-cta-inner
+					h3 Listen to OnWave From Anywhere!
+				.box-cta-inner
+					a.button.button-md.button-white(href='#') Listen Online
+
+	// Frequently Asked Questions
+	section.section.section-lg
+		.container.text-center
+			h2 Frequently Asked Questions
+			.row.row-flex.row-40.number-counter.text-left
+				.col-sm-12.col-lg-4.wow.fadeIn
+					.text-block-lined
+						h5.title Do you provide any scripts with your templates?
+						p Our templates do not include any additional scripts. Newsletter subscriptions, search fields, forums, image galleries (in HTML versions of Flash products) are inactive. Basic scripts can be easily added at www.zemez.io If you are not sure that the element you’re interested in is active please contact our Support.
+						h5.title In what formats are your templates available?
+						p Website templates are available in Photoshop and HTML formats. Fonts are included with the Photoshop file.
+
+				.col-sm-12.col-lg-4.wow.fadeIn
+					.text-block-lined
+						h5.title What payment methods can I use to pay for my order?
+						p We accept Visa, MasterCard, and American Express credit and debit cards for your convenience. Some other payment methods are also available.
+						h5.title What are the advantages of purchasing a website template?
+						p The major advantage is price: You get a high quality design for just $20-$70. You don’t have to hire a web designer or web design studio. Second advantage is time frame: It usually takes 5-15 days for a good designer to produce a web page of such quality regardless of its purpose.
+
+				.col-sm-12.col-lg-4.wow.fadeIn
+					.text-block-lined
+						h5.title What am I allowed to do with the templates?
+						p You may build a website using the template in any way you like. You may not resell or redistribute templates (like we do); claim intellectual or exclusive ownership to any of our products.
+						h5.title What do I receive when I order a template from Zemez?
+						p After you complete the payment via our secure form you will receive the instructions for downloading the product. The source files in the download package can vary based on the type of the product you have purchased.
+
+
+			.button-wrap-lg
+				a.button.button-lg.button-primary(href="#") View All Asked Questions
+
+	// Latest Blog Posts
+	section.section.section-lg.bg-gray-100
+		.container.text-center
+			h2 Latest Blog Posts
+			.row.row-flex.row-40.justify-content-center.number-counter.text-left.wow.fadeInUp
+				.col-sm-6.col-lg-3
+					+post-classic-2(
+					{
+						imageName: "masonry-blog-1-370x240",
+						title: "DJ Aaron Wilson Visits LA Club with His Biggest Set",
+						link: "classic-blog.html",
+						exeption: "Aaron Wilson, one of the Europe’s most popular House DJs, will visit Kulture Club in Los Angeles next Saturday. He is going to play some of his new..."
+					},
+					{
+						date: "2 days ago",
+						author: "Martha Ryan",
+						authorLink: "classic-blog.html"
+					},
+
+					[{"title": "News", "href": "classic-blog.html"}]
+					)
+				.col-sm-6.col-lg-3
+					+post-classic-2(
+					{
+						imageName: "masonry-blog-2-370x240",
+						title: "2nd Annual OnWave EDM & Rock Music Festival to be Held at Fenimore Park",
+						link: "single-blog-post.html",
+						exeption: "OnWave is happy to announce the location of our 2nd EDM & Rock Music Festival. The event will be held at Fenimore Park located not far from..."
+					},
+					{
+						date: "2 days ago",
+						author: "Lawrence Kelly",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+
+				.col-sm-6.col-lg-3
+					+post-classic-2(
+					{
+						imageName: "masonry-blog-3-370x240",
+						title: "Sandra Peterson Will Visit Our Studio Next Week",
+						link: "single-blog-post.html",
+						exeption: "Sandra Peterson , the lead singer and founder of Quadromove, worldwide known Glitch Hop band, will visit..."
+					},
+					{
+						date: "2 days ago",
+						author: "Theresa Simpson",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+
+				.col-sm-6.col-lg-3
+					+post-classic-2(
+					{
+						imageName: "masonry-blog-4-370x240",
+						title: "Top 10 Indie Rock Groups According to Our Listeners: Voting Results",
+						link: "single-blog-post.html",
+						exeption: "We are glad to announce the results of the Best Indie Rock Groups voting that started last week. We didn’t expect such varied results but still..."
+					},
+					{
+						date: "2 days ago",
+						author: "Lawrence Kelly",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+
+			.button-wrap-lg
+				a.button.button-lg.button-primary(href="masonry-blog.html") View All Blog Posts
+
+	// Pricing
+	section.section.section-lg.hide
+		.container.text-center
+			h2 Cities and Frequencies
+			.row.no-gutters.justify-content-center.bg-img-2
+	// Page Footer
+	include ../sections/_footer-2

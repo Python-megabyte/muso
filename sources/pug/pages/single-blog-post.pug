@@ -1,0 +1,166 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-pagination
+
+block variables
+	- var activeCategory = 'blog'
+	- var pageName = 'Single blog post'
+
+block page 
+	// Page Header
+	include ../sections/_header-creative
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Overview
+	section.section.section-lg.bg-default
+		.container
+			.row.justify-content-center
+				.col-md-10.col-xl-8
+					.post-single-wrap
+						.post-item
+							h2 DJ Aaron Wilson Visits LA Club with His Biggest Set
+							ul.list-dotted
+								li
+									.post-author
+										.media-wrap
+											+jpg("single-post-author-1-48x48")
+										.author-name Martha Ryan
+								li
+									.post-time June, 16 2018 at 2:12 pm
+								li
+									.post-tag News
+							.subtitle.heading-6 Vitae purus faucibus ornare suspendisse sed nisi lacus. Quis auctor elit sed vulputate. Nibh cras pulvinar mattis nunc sed blandit libero.
+							+jpg("single-post-1-770x472", "img-bordered")
+							p Dapibus ultrices in iaculis nunc sed augue. Amet cursus sit amet dictum sit. Vel pharetra vel turpis nunc eget lorem dolor sed. Diam sollicitudin tempor id eu nisl nunc mi. Sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque.
+							+blockquote({
+								quote: "Sagittis id consectetur purus ut faucibus pulvinar elementum integer. Diam vel quam elementum pulvinar etiam non quam lacus. Quis varius quam quisque id. Odio eu feugiat pretium nibh ipsum consequat nisl vel pretium."
+							})
+							p At eos omnium option disputando, eius nusquam quo at. Ad sit modo nemore diceret, in vel vidit dicat. Eam fierent neglegentur ea. Delectus volutpat at sit, cum etiam copiosae an. Vim in illud nonumy malorum. Nemore democritum cu eos, quo etiam volumus id. Eripuit corrumpit ei quo.
+							p In summo assentior consetetur qui, ea per dolor erroribus expetendis. Causae audire cu est. Quodsi meliore mei ea, at odio euismod pro. Ad mundi indoctum sit. Vel meis instructior in, discere habemus eu usu. Ne eam quas saperet, cu vix homero recteque, no mea eripuit sadipscing.
+							+jpg("single-post-2-770x472", "img-bordered")
+							p Non enim praesent elementum facilisis. Ac tortor dignissim convallis aenean et tortor at risus viverra. In fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Habitant morbi tristique senectus et netus et malesuada. Libero enim sed faucibus turpis in. Volutpat ac tincidunt vitae semper quis. Tortor vitae purus faucibus ornare suspendisse sed
+							.group-sm.buttons-group-1
+								a.button.button-icon.button-icon-left.button-round.button-facebook(href="#")
+									span.icon.mdi.mdi-facebook
+									span Share on Facebook
+								a.button.button-icon.button-icon-left.button-round.button-twitter(href="#")
+									span.icon.mdi.mdi-twitter
+									span Share on Twitter
+						.post-item
+							h2 Comments
+							ul.comment-list
+								li
+									.box-comment
+										.box-comment-image
+											+jpg("single-post-comment-1-70x70")
+										.box-comment-body
+											.title Harold Brown
+											.date June, 16 2018 at 2:48 pm
+											.comment Quam vulputate dignissim suspendisse in est ante in nibh. Scelerisque purus semper eget duis at tellus at urna. Hac habitasse platea dictumst vestibulum rhoncus est.
+											a.comment-link(href="#") Reply
+									ul.comment-list-reply
+										li
+											.box-comment
+												.box-comment-image
+													+jpg("single-post-comment-2-70x70")
+												.box-comment-body
+													.title Martha Ryan
+													.date June, 16 2018 at 2:48 pm
+													.comment Aliquam sem et tortor consequat id. Curabitur gravida arcu ac tortor dignissim convallis aenean et. Dui sapien eget mi proin sed libero enim sed. Odio morbi quis commodo odio aenean sed adipiscing. Nisl purus in mollis nunc sed id semper risus.
+													a.comment-link(href="#") Reply
+								li
+									.box-comment
+										.box-comment-image
+											+jpg("single-post-comment-3-70x70")
+										.box-comment-body
+											.title Melissa Wagner
+											.date June, 16 2018 at 2:48 pm
+											.comment Id consectetur purus ut faucibus pulvinar elementum integer. In est ante in nibh mauris cursus mattis molestie a. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis.
+											a.comment-link(href="#") Reply
+
+						.post-item
+							h2 Leave a Comment
+							form.rd-form.rd-mailform.comment-form
+								.row.row-15
+									.col-md-6
+										.form-wrap
+											input#contact-name.form-input(type='text' name='name' data-constraints='@Required')
+											label.form-label(for='contact-name') Name
+
+									.col-md-6
+										.form-wrap
+											input#contact-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+											label.form-label(for='contact-email') E-mail
+
+									.col-md-12
+										.form-wrap
+											label.form-label(for='contact-message') Message
+											textarea#contact-message.form-input(name='message' data-constraints='@Required')
+
+									.col-md-6
+										button.button.button-primary(type='submit') Submit
+
+	// Latest Blog Posts
+	section.section.section-md.bg-gray-100
+		.container.text-center
+			h2.custom-title: span Recent Blog Posts
+			.row.row-30.row-offset-4.text-left
+				.col-md-6.col-lg-4
+					+post-boxed(
+					{
+						imageName: "grid-blog-1-370x272",
+						title: "2nd Annual OnWave Festival to be Held at Fenimore Park",
+						link: "single-blog-post.html",
+						exeption: "Est ante in nibh mauris cursus mattis molestie a iaculis. Quis auctor elit sed vulputate mi sit. In aliquam sem fringilla ut ."
+					},
+					{
+						date: "2 days ago",
+						author: "Martha Ryan",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+
+				.col-md-6.col-lg-4
+					+post-boxed(
+					{
+						imageName: "grid-blog-2-370x272",
+						title: "Sandra Peterson Will Visit Our Studio Next Week",
+						link: "single-blog-post.html",
+						exeption: "Sed enim ut sem viverra. In tellus integer feugiat scelerisque varius morbi. Et magnis nascetur ridiculus mus mauris ."
+					},
+					{
+						date: "2 days ago",
+						author: "Martha Ryan",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+
+				.col-md-6.col-lg-4
+					+post-boxed(
+					{
+						imageName: "grid-blog-3-370x272",
+						title: "Top 10 Indie Rock Groups According to Our Listeners",
+						link: "single-blog-post.html",
+						exeption: "Tellus morbi nascetur ut sem viverra. Feugiat sed integer in scelerisque varius enim. Et magnis ridiculus mus mauris."
+					},
+					{
+						date: "2 days ago",
+						author: "Martha Ryan",
+						authorLink: "single-blog-post.html"
+					},
+
+					[{"title": "News", "href": "single-blog-post.html"}]
+					)
+
+
+	// Page Footer
+	include ../sections/_footer-2
